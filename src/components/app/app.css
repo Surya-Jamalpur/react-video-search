@@ -1,0 +1,13 @@
+
+.contentArea {
+    display: flex;
+    justify-content: space-between;
+}
+.videosList {
+    width: 300px;
+    float: right;
+}
+.videoPlayer {
+    width: 600px;
+    float: left;
+}

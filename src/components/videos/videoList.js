@@ -14,9 +14,13 @@ import VideoItem from './videoItem'
 
 //bothe ways works exacty same, so commented the class based
 
-const VideoList = ({ videos }) => { // destructured props obj
+const VideoList = ({ videos, onSelectVideo }) => { // destructured props obj
     const listOfVideoItems = videos.map(video => {
-        return <VideoItem videoObj={video} key={video.id.videoId} />
+        return (
+            <div className="ui list">
+                <VideoItem key={video.id.videoId} videoObj={video} onSelectVideo={onSelectVideo} />
+            </div>
+        )
     })
     return <div> {listOfVideoItems}</div>
 }

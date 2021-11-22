@@ -9,20 +9,34 @@ class VideoSearchBar extends React.Component {
     }
     onSearchValueChange(event) {
         this.setState({ term: event.target.value })
-        console.log(this.state.term);
     }
 
     render() {
         return (
-            <form onSubmit={this.searchBarSubmit} autoComplete='off'>
-                <lable htmlFor="search">Search</lable>
-                <input
-                    type="text"
-                    name="search"
-                    value={this.state.term}
-                    onChange={(e) => this.onSearchValueChange(e)}
-                />
-            </form>
+            // <form onSubmit={this.searchBarSubmit} autoComplete='off'>
+            //     <lable htmlFor="search">Search</lable>
+            //     <input
+            //         type="text"
+            //         name="search"
+            //         value={this.state.term}
+            //         onChange={(e) => this.onSearchValueChange(e)}
+            //     />
+            // </form>
+
+            <div className="ui segment">
+                {/* <form className="ui form" onSubmit={(event) => this.onSearchSubmit(event)}> */}
+                <form className="ui form" onSubmit={this.searchBarSubmit} autoComplete='off'>
+                    <div className="field">
+                        <label>Search Images</label>
+                        {/* this will also work as exactly same as below */}
+                        {/* <input type="text" placeholder="Search Images" onChange={this.onInputChange} /> */}
+                        <input type="text"
+                            placeholder="Search Images"
+                            value={this.state.term}
+                            onChange={(e) => this.onSearchValueChange(e)} />
+                    </div>
+                </form>
+            </div>
         )
     }
 }
