@@ -12,7 +12,7 @@ class App extends React.Component {
     key = 'AIzaSyDuap_736-w7Kwx5o23MOQyhoFPilPQ7zQ';
     state = { videos: [], selectedVideo: null }
     componentDidMount() {
-        this.searchSubmit('nurse');
+        this.searchSubmit('flight');
     }
     searchSubmit = async (term) => {
         const videoResponse = await youtube.get('/search', {
